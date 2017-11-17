@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SLPageViewKit_Example' do
+  pod 'SLPageViewKit', :path => '../'
+
+  target 'SLPageViewKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
