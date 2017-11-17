@@ -14,6 +14,10 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		AEBAB8BB1FBE7D2700342E55 /* SLPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8BA1FBE7D2700342E55 /* SLPageView.swift */; };
+		AEBAB8C91FBE7E8600342E55 /* SLTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8C81FBE7E8600342E55 /* SLTitleView.swift */; };
+		AEBAB8CB1FBE7E9100342E55 /* SLContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8CA1FBE7E9100342E55 /* SLContentView.swift */; };
+		AEBAB8CD1FBE7EB400342E55 /* SLPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8CC1FBE7EB400342E55 /* SLPageStyle.swift */; };
 		D6B1FAA1F989AF0E1990B8C0 /* Pods_SLPageViewKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3385A08F4058A009B738F7 /* Pods_SLPageViewKit_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +46,14 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6121055EB2D9FDE08C28F9FB /* Pods-SLPageViewKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLPageViewKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLPageViewKit_Example/Pods-SLPageViewKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		77EE2CBA00A375325924EBC9 /* Pods-SLPageViewKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLPageViewKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLPageViewKit_Tests/Pods-SLPageViewKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DC3B8438556224904AE5B618 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DD386ED37DDC027E7345F3F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AEBAB8BA1FBE7D2700342E55 /* SLPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPageView.swift; sourceTree = "<group>"; };
+		AEBAB8C81FBE7E8600342E55 /* SLTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLTitleView.swift; sourceTree = "<group>"; };
+		AEBAB8CA1FBE7E9100342E55 /* SLContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLContentView.swift; sourceTree = "<group>"; };
+		AEBAB8CC1FBE7EB400342E55 /* SLPageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPageStyle.swift; sourceTree = "<group>"; };
+		DC3B8438556224904AE5B618 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DD386ED37DDC027E7345F3F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DF3385A08F4058A009B738F7 /* Pods_SLPageViewKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLPageViewKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8DBB5A0964DDE6BE183620C /* SLPageViewKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SLPageViewKit.podspec; path = ../SLPageViewKit.podspec; sourceTree = "<group>"; };
+		E8DBB5A0964DDE6BE183620C /* SLPageViewKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SLPageViewKit.podspec; path = ../SLPageViewKit.podspec; sourceTree = "<group>"; };
 		FF2A880379093B80976DF923 /* Pods-SLPageViewKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLPageViewKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLPageViewKit_Tests/Pods-SLPageViewKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +121,7 @@
 		607FACD21AFB9204008FA782 /* Example for SLPageViewKit */ = {
 			isa = PBXGroup;
 			children = (
+				AEBAB8B91FBE7D1D00342E55 /* Classes */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -157,6 +166,17 @@
 				DD386ED37DDC027E7345F3F3 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		AEBAB8B91FBE7D1D00342E55 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AEBAB8BA1FBE7D2700342E55 /* SLPageView.swift */,
+				AEBAB8C81FBE7E8600342E55 /* SLTitleView.swift */,
+				AEBAB8CA1FBE7E9100342E55 /* SLContentView.swift */,
+				AEBAB8CC1FBE7EB400342E55 /* SLPageStyle.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,8 +390,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEBAB8CB1FBE7E9100342E55 /* SLContentView.swift in Sources */,
+				AEBAB8C91FBE7E8600342E55 /* SLTitleView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				AEBAB8BB1FBE7D2700342E55 /* SLPageView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				AEBAB8CD1FBE7EB400342E55 /* SLPageStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

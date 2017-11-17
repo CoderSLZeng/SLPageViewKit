@@ -12,12 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        view.backgroundColor = .red
+        
+        let style = SLPageStyle()
+        style.titleViewHeight = 44
+        
+        let pageView = SLPageView(frame: view.bounds, style: style)
+        view.addSubview(pageView);
     }
 
 }

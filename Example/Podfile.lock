@@ -1,0 +1,16 @@
+PODS:
+  - SLPageViewKit (0.1.0)
+
+DEPENDENCIES:
+  - SLPageViewKit (from `../`)
+
+EXTERNAL SOURCES:
+  SLPageViewKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SLPageViewKit: eec728a953066dfdca38ad84def81bf6e6aff3bc
+
+PODFILE CHECKSUM: 2382d10fbf85b7099dc1c01142900251aa944355
+
+COCOAPODS: 1.3.1
