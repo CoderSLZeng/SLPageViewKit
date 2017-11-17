@@ -43,8 +43,8 @@ extension SLPageView {
         let contentView = SLContentView(frame: contentViewFrame)
         addSubview(contentView)
         
-        titleView.backgroundColor = .green
-        contentView.backgroundColor = .blue
+        titleView.backgroundColor = .randomColor()
+        contentView.backgroundColor = .randomColor()
     }
     
     
