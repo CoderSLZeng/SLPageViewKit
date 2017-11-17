@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SLPageStyle {
+class SLtitleViewStyle {
     var titleViewHeight: CGFloat = 44
 }

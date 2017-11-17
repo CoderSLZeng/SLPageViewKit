@@ -17,7 +17,7 @@
 		AEBAB8BB1FBE7D2700342E55 /* SLPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8BA1FBE7D2700342E55 /* SLPageView.swift */; };
 		AEBAB8C91FBE7E8600342E55 /* SLTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8C81FBE7E8600342E55 /* SLTitleView.swift */; };
 		AEBAB8CB1FBE7E9100342E55 /* SLContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8CA1FBE7E9100342E55 /* SLContentView.swift */; };
-		AEBAB8CD1FBE7EB400342E55 /* SLPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8CC1FBE7EB400342E55 /* SLPageStyle.swift */; };
+		AEBAB8CD1FBE7EB400342E55 /* SLtitleViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8CC1FBE7EB400342E55 /* SLtitleViewStyle.swift */; };
 		AEBAB8D01FBE844200342E55 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB8CF1FBE844200342E55 /* UIColor-Extension.swift */; };
 		D6B1FAA1F989AF0E1990B8C0 /* Pods_SLPageViewKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3385A08F4058A009B738F7 /* Pods_SLPageViewKit_Example.framework */; };
 /* End PBXBuildFile section */
@@ -50,7 +50,7 @@
 		AEBAB8BA1FBE7D2700342E55 /* SLPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPageView.swift; sourceTree = "<group>"; };
 		AEBAB8C81FBE7E8600342E55 /* SLTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLTitleView.swift; sourceTree = "<group>"; };
 		AEBAB8CA1FBE7E9100342E55 /* SLContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLContentView.swift; sourceTree = "<group>"; };
-		AEBAB8CC1FBE7EB400342E55 /* SLPageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPageStyle.swift; sourceTree = "<group>"; };
+		AEBAB8CC1FBE7EB400342E55 /* SLtitleViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLtitleViewStyle.swift; sourceTree = "<group>"; };
 		AEBAB8CF1FBE844200342E55 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		DC3B8438556224904AE5B618 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DD386ED37DDC027E7345F3F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				AEBAB8BA1FBE7D2700342E55 /* SLPageView.swift */,
 				AEBAB8C81FBE7E8600342E55 /* SLTitleView.swift */,
 				AEBAB8CA1FBE7E9100342E55 /* SLContentView.swift */,
-				AEBAB8CC1FBE7EB400342E55 /* SLPageStyle.swift */,
+				AEBAB8CC1FBE7EB400342E55 /* SLtitleViewStyle.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 				AEBAB8BB1FBE7D2700342E55 /* SLPageView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				AEBAB8D01FBE844200342E55 /* UIColor-Extension.swift in Sources */,
-				AEBAB8CD1FBE7EB400342E55 /* SLPageStyle.swift in Sources */,
+				AEBAB8CD1FBE7EB400342E55 /* SLtitleViewStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
