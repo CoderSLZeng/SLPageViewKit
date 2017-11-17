@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .randomColor()
-        
+        view.backgroundColor = UIColor.init(hex: "0xe0e0e8")
+
         let style = SLPageStyle()
         style.titleViewHeight = 44
         
