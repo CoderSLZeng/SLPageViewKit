@@ -45,7 +45,7 @@ class SLContentView: UIView {
         
         super.init(frame: frame)
         
-        self.setupUI()
+        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {

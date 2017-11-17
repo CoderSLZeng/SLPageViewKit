@@ -10,4 +10,8 @@ import UIKit
 
 class SLtitleViewStyle {
     var titleViewHeight: CGFloat = 44
+    var titleFont: UIFont = UIFont.systemFont(ofSize: 15.0)
+    var isScrollEnable: Bool = false
+    var titleMargin: CGFloat = 20
+    
 }
