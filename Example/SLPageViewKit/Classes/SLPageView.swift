@@ -51,6 +51,7 @@ extension SLPageView {
         
         // 设置代理
         titleView.delegate = contentView
+        contentView.delegate = titleView
     }
     
     

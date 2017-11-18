@@ -10,8 +10,15 @@ import UIKit
 
 private let kContentCellID = "kContentCellID"
 
-class SLContentView: UIView {
+protocol SLContentViewDelegate: class {
+    func contentView(_ contentView: SLContentView, targetIndex: Int)
+}
 
+class SLContentView: UIView {
+    
+    // MARK: 对外属性
+    weak var delegate: SLContentViewDelegate?
+    
     // MARK: 成员属性
     fileprivate var childVcs: [UIViewController]
     fileprivate var parentVc: UIViewController
@@ -29,6 +36,7 @@ class SLContentView: UIView {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kContentCellID)
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         collectionView.bounces = false
         collectionView.isPagingEnabled = true
@@ -86,11 +94,18 @@ extension SLContentView: UICollectionViewDataSource {
         vc.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(vc.view)
         
-        
         return cell
     }
 }
 
+// MARK: - UICollectionViewDelegate
+extension SLContentView: UICollectionViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let targetIndex = Int(scrollView.contentOffset.x / collectionView.bounds.width)
+        delegate?.contentView(self, targetIndex: targetIndex)
+    }
+    
+}
 
 // MARK: - SLTitleViewDelegate
 extension SLContentView: SLTitleViewDelegate {

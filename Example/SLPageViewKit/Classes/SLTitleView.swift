@@ -119,22 +119,31 @@ extension SLTitleView {
     @objc fileprivate func titleLabelClick(_ tapGes: UITapGestureRecognizer) {
         // 1.取出用于点击的titleLabel
         let targetLabel = tapGes.view as! UILabel
-        let sourceLabel = titleLabels[currentIndex]
         
-        // 2.点击的titleLabel的下标
-        let targetIndex = targetLabel.tag
+        // 2.调整titleLabel
+        adjustTitleLabel(targetIndex: targetLabel.tag)
         
-        // 3.重复点击处理
+        // 3.通知代理
+        delegate?.titleView(self, targetIndex: currentIndex)
+    }
+    
+    fileprivate func adjustTitleLabel(targetIndex: Int) {
+
+        // 1.重复处理
         guard targetIndex != currentIndex else { return }
         
-        // 4.切换状态颜色
+        // 2.取出Label
+        let targetLabel = titleLabels[targetIndex]
+        let sourceLabel = titleLabels[currentIndex]
+        
+        // 3.切换状态颜色
         targetLabel.textColor = style.selectedColor
         sourceLabel.textColor = style.normalColor
         
-        // 5.记录下标值
+        // 4.记录下标值
         currentIndex = targetIndex
         
-        // 6.如果是不需要滚动,则不需要调整中间位置
+        // 5.如果是不需要滚动,则不需要调整中间位置
         guard style.isScrollEnable else { return }
         
         // 6.计算和中间位置的偏移量
@@ -151,12 +160,17 @@ extension SLTitleView {
         
         // 8.滚动UIScrollView
         scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
-        
-        // 9.通知代理
-        delegate?.titleView(self, targetIndex: targetIndex)
     }
 }
 
+// MARK: - SLContentViewDelegate
+extension SLTitleView: SLContentViewDelegate {
+    
+    func contentView(_ contentView: SLContentView, targetIndex: Int) {
+        
+        adjustTitleLabel(targetIndex: targetIndex)
+    }
+}
 
 
 
