@@ -48,6 +48,9 @@ extension SLPageView {
         let contentView = SLContentView(frame: contentViewFrame, childVcs:childVcs, parentVc:parentVc)
         addSubview(contentView)
         
+        
+        // 设置代理
+        titleView.delegate = contentView
     }
     
     

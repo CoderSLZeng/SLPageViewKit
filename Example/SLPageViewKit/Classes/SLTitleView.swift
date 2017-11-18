@@ -8,8 +8,15 @@
 
 import UIKit
 
-class SLTitleView: UIView {
+protocol SLTitleViewDelegate: class  {
+    
+    func titleView(_ titleView: SLTitleView, targetIndex: Int)
+}
 
+class SLTitleView: UIView {
+    // MARK: 对外属性
+    weak var delegate: SLTitleViewDelegate?
+    
     // MARK: 成员属性
     fileprivate var titles: [String]
     fileprivate var style: SLtitleViewStyle
@@ -24,6 +31,7 @@ class SLTitleView: UIView {
     
     fileprivate lazy var titleLabels = [UILabel]()
     fileprivate lazy var currentIndex : Int = 0
+    
     
     // MARK: 构造方法
     init(frame: CGRect, titles: [String], style: SLtitleViewStyle) {
@@ -143,6 +151,9 @@ extension SLTitleView {
         
         // 8.滚动UIScrollView
         scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+        
+        // 9.通知代理
+        delegate?.titleView(self, targetIndex: targetIndex)
     }
 }
 

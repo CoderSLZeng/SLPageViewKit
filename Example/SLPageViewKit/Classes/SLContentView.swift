@@ -91,3 +91,17 @@ extension SLContentView: UICollectionViewDataSource {
     }
 }
 
+
+// MARK: - SLTitleViewDelegate
+extension SLContentView: SLTitleViewDelegate {
+    func titleView(_ titleView: SLTitleView, targetIndex: Int) {
+        // 方式1
+//        let offsetX = CGFloat(targetIndex) * collectionView.bounds.width
+//        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
+        
+        // 方式2
+        let indexPath = IndexPath(item: targetIndex, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+    }
+}
+
