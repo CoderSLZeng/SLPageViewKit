@@ -14,6 +14,8 @@ class SLtitleViewStyle {
     var isScrollEnable: Bool = false
     var titleMargin: CGFloat = 20
     
-    var normalColor: UIColor = .black
-    var selectedColor: UIColor = .orange
+    var normalColor: UIColor = UIColor(r: 255, g: 255, b: 255)
+    var selectedColor: UIColor = UIColor(r: 255, g: 127, b: 0)
+//    var normalColor: UIColor = .white
+//    var selectedColor: UIColor = .orange
 }

@@ -12,6 +12,7 @@ private let kContentCellID = "kContentCellID"
 
 protocol SLContentViewDelegate: class {
     func contentView(_ contentView: SLContentView, targetIndex: Int)
+    func contentView(_ contentView: SLContentView, targetIndex: Int, progress: CGFloat)
 }
 
 class SLContentView: UIView {
@@ -22,6 +23,8 @@ class SLContentView: UIView {
     // MARK: 成员属性
     fileprivate var childVcs: [UIViewController]
     fileprivate var parentVc: UIViewController
+    
+    fileprivate var startOffsetX: CGFloat = 0
     
     // MARK: lazy
     fileprivate lazy var collectionView: UICollectionView = {
@@ -45,6 +48,8 @@ class SLContentView: UIView {
 
         return collectionView
     }()
+    
+    
     
     // MARK: 构造方法
     init(frame: CGRect, childVcs: [UIViewController], parentVc: UIViewController) {
@@ -103,6 +108,47 @@ extension SLContentView: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let targetIndex = Int(scrollView.contentOffset.x / collectionView.bounds.width)
         delegate?.contentView(self, targetIndex: targetIndex)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffsetX = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // 1.定义获取需要的数据
+        var progress: CGFloat = 0
+        var sourceIndex: Int = 0
+        var targetIndex: Int = 0
+        
+        // 2.判断是左滑还说右滑
+        let currentOffsetX = scrollView.contentOffset.x
+        let scrollViewW = scrollView.bounds.width
+        
+        if currentOffsetX > startOffsetX { // 左滑
+            
+            sourceIndex = Int(startOffsetX / scrollViewW)
+            targetIndex = sourceIndex + 1
+            
+            if targetIndex >= childVcs.count {
+                targetIndex = childVcs.count - 1
+            }
+            
+            progress = (currentOffsetX - startOffsetX) / scrollViewW
+            
+        } else { // 右滑
+            
+            sourceIndex = Int(startOffsetX / scrollViewW)
+            targetIndex = sourceIndex - 1
+            
+            if targetIndex < 0 {
+                targetIndex = 0
+            }
+            
+            progress = (startOffsetX - currentOffsetX) / scrollViewW
+        }
+        
+        delegate?.contentView(self, targetIndex: targetIndex, progress: progress)
     }
     
 }

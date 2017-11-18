@@ -165,10 +165,41 @@ extension SLTitleView {
 
 // MARK: - SLContentViewDelegate
 extension SLTitleView: SLContentViewDelegate {
-    
+
     func contentView(_ contentView: SLContentView, targetIndex: Int) {
         
         adjustTitleLabel(targetIndex: targetIndex)
+    }
+    
+    func contentView(_ contentView: SLContentView, targetIndex: Int, progress: CGFloat) {
+        // 1.取出Label
+        let targetLabel = titleLabels[targetIndex]
+        let sourceLabel = titleLabels[currentIndex]
+        
+        // 2.渐变文字颜色
+        let selectedRGB = getRGBValue(style.selectedColor)
+        let normalRGB = getRGBValue(style.normalColor)
+        
+        // 2.1计算颜色差值
+        let deltaRGB = (selectedRGB.0 - normalRGB.0,
+                        selectedRGB.1 - normalRGB.1,
+                        selectedRGB.2 - normalRGB.2)
+        
+        sourceLabel.textColor = UIColor(r: selectedRGB.0 - deltaRGB.0 * progress,
+                                        g: selectedRGB.1 - deltaRGB.1 * progress,
+                                        b: selectedRGB.2 - deltaRGB.2 * progress)
+        
+        targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress,
+                                        g: normalRGB.1 + deltaRGB.1 * progress,
+                                        b: normalRGB.2 + deltaRGB.2 * progress)
+    }
+    
+    private func getRGBValue(_ color: UIColor) -> (CGFloat, CGFloat, CGFloat) {
+        guard  let components = color.cgColor.components else {
+            fatalError("文字颜色请按照RGB方式设置")
+        }
+
+        return (components[0] * 255, components[1] * 255, components[2] * 255 )
     }
 }
 

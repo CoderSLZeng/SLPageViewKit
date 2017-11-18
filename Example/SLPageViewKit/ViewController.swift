@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         // 2.所有的标题
 //        let titles = ["推荐", "视频", "直播", "娱乐"]
-        let titles = ["推荐", "视频", "直播", "娱乐", "新闻", "段子", "美女", "科技"]
+        let titles = ["推荐", "视频", "最热直播", "娱乐头条", "新闻", "段子", "美女", "科技"]
         
         // 3.标题视图样式
         let titleViewStyle = SLtitleViewStyle()
